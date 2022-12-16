@@ -14,10 +14,10 @@ class MyElGamal:
         self.C1 = 0
         self.C2 = 0
 
-        self.text = 0           # 原始文本
-        self.enc_text = 0       # 加密文本
-        self.dec_text = 0       # 解密后文本
-        self.cipher = 0         # 需破解文本
+        self.text = 0           # Origin text
+        self.enc_text = 0       # Encrypted text
+        self.dec_text = 0       # Decrypted text
+        self.cipher = 0         # Eavesdrop text
         pass
 
     # Check if it is primitive root
@@ -89,7 +89,7 @@ class MyElGamal:
     
     def MyElGamal_Decrypt(self):
         print("--- MyElGamal Decryption ---")
-        # B解密，使用rand_start ~ rand_prime
+        # B decrypt, using rand_start ~ rand_prime
         l = random.randrange(self.rand_start, self.rand_prime)
         self.B1 = self.C1
         self.B2 = self.B1 ** l % self.rand_prime
